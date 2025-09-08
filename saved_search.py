@@ -14,7 +14,7 @@ class Request:
 
     #EXTRACT ID'S
     def extract_id(self):
-        pattern = r"(REST_[a-zA-Z0-9_]+)\s*=\s*'([^']+)';"
+        pattern = r""
         self.final = []
         mat = re.findall(pattern, self.data)
 
