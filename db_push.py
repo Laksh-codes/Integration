@@ -4,9 +4,9 @@ class save_to_db:
     def __init__(self, dictonary):
         self.dict = dictonary
         self.conn = mysql.connector.connect(
-            host = 'localhost',
-            user = 'root',
-            password = '@123ertyuI'
+            host = 'q',
+            user = 'r',
+            password = 'w'
         )        
         if self.conn.is_connected():
             print("Connected to MySQL server")
@@ -21,15 +21,15 @@ class save_to_db:
     def create_table(self):
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS Contract(
-                Id INTEGER PRIMARY KEY,
-                Wfstate TEXT,
-                record_type TEXT,
-                contract_type TEXT,
-                contract_start_date TEXT,
-                contract_end_date TEXT,
-                contract_term_in_months TEXT,
-                addendum_effective_date TEXT,
-                new_sub_category TEXT
+                a INTEGER PRIMARY KEY,
+                b TEXT,
+                c TEXT,
+                d TEXT,
+                e TEXT,
+                f TEXT,
+                g TEXT,
+                h TEXT,
+                i TEXT
                             )
         """)
         print("Table Ready.")
@@ -41,7 +41,7 @@ class save_to_db:
     def insert_values(self):
         """Insert multiple rows into the table"""
         sql ="""
-            INSERT IGNORE INTO Contract (Id, Wfstate, record_type, contract_type, contract_start_date, contract_end_date, contract_term_in_months, addendum_effective_date, new_sub_category) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT IGNORE INTO Contract () VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
 
         for i in range(1, len(self.values), 200):
@@ -58,11 +58,11 @@ class save_to_db:
             if i == 0:
                 continue
 
-            self.values.append((key, value.get("wfstate"), value.get("record_type"), value.get("contract_type"), value.get("contract_start_date"), value.get("contract_end_date"), value.get("contract_term_in_months"), value.get("addendum_effective_date"), value.get("new_sub_category")))
+            self.values.append()
             print(self.values)
         return self.values
     def update_data(self):
-        self.cursor.execute("""UPDATE Contract SET contract_start_date='Feb 29 2003' WHERE Id='54122'""")
+        self.cursor.execute("""UPDATE Contract SET '""")
         self.conn.commit()
         self.conn.close()
 obj = save_to_db(dictonary)
