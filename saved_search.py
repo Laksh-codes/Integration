@@ -3,7 +3,7 @@ import re
 class Request:
     #URL 
     def __init__(self):
-        self.url = "https://asiapacificbreweriestest.agiloft.com/ewws/EWSearch?$KB=Asia Pacific Breweries Test&$table=contract&$login=Admin1&$password=Integration@2025&$lang=en&search=Active%20BSA%20Contracts&field=id"
+        self.url = ""
         print("URL Tracked.")
     
     #SAVING RESPONSE
